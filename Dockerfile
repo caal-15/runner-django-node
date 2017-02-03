@@ -7,6 +7,10 @@ RUN apt-get update \
   && apt-get install -y libcairo2-dev \
   && apt-get install -y libffi-dev \
   && apt-get install -y libpango1.0-dev \
+  && apt-get install -y postgresql-9.6 \
+  && apt-get install -y postgresql-client-9.6 \
+  && service postgresql restart \
+  && echo "local all postgres trust" >> /etc/postgresql/9.6/main/pg_hba.conf \
   && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
   && apt-get install -y nodejs \
   && pip install django \
