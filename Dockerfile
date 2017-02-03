@@ -10,9 +10,7 @@ RUN apt-get update \
   && apt-get install -y postgresql-9.4 \
   && apt-get install -y postgresql-client-9.4 \
   && echo "local all postgres trust" > /etc/postgresql/9.4/main/pg_hba.conf \
-  && service postgresql restart \
   && curl -sL https://deb.nodesource.com/setup_6.x | bash - \
   && apt-get install -y nodejs \
-  && pip install django \
   && npm install -g npm \
   && npm install -g yarn
